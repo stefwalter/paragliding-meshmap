@@ -8,6 +8,18 @@ export const legendReactDOM = (
     <h3 className="text-2xl pb-2">Legend</h3>
     {/* </div> */}
     <div className="relative pl-4">
+      <span className={`absolute h-3 w-3 rounded-full bg-yellow-600 border-3 top-0.5 left-0`}></span>
+      Hike
+    </div>
+    <div className="relative pl-4">
+      <span className={`absolute h-3 w-3 rounded-full bg-blue-600 border-3 top-0.5 left-0`}></span>
+      Fly
+    </div>
+    <div className="relative pl-4">
+      <span className={`absolute h-3 w-3 rounded-full bg-red-600 border-3 top-0.5 left-0`}></span>
+      Concern
+    </div>
+    <div className="relative pl-4">
       <span className={`absolute h-3 w-3 rounded-full bg-green-600 border-3 top-0.5 left-0`}></span>
       Connected
     </div>
@@ -54,10 +66,12 @@ export function cssClassFor(str: NodeStatus | 'start-track' | 'end-track', activ
   }
 
   switch(activity) {
+    case 'hike':
+      return `bg-yellow-600 ${commonClasses}`
     case 'fly':
       return `bg-blue-600 ${commonClasses}`
     case 'concern':
-      return `bg-orange-600 ${commonClasses}`
+      return `bg-red-600 ${commonClasses}`
     default:
       return `bg-green-600 ${commonClasses}`
   }

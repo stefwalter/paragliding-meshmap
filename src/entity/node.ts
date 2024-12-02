@@ -243,7 +243,7 @@ export default class Node extends BaseTypeWithoutPrimaryKey {
     if (position.aboveGroundLevel > 50 && position.groundSpeed > 5) {
       return 'fly'
       /* This is an example of identifying the concern activity */
-    } else if (position.altitude > 1600 && position.aboveGroundLevel < 50 && position.groundSpeed == 0) {
+    } else if (position.altitude > 1600 && position.aboveGroundLevel < 50 && (position.groundSpeed == 0 || position.groundSpeed == null) {
       return 'concern'
     } else if (position.aboveGroundLevel < 50 && position.groundSpeed > 0 && position.groundSpeed < 5) {
       return 'hike'
